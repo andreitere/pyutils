@@ -25,4 +25,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         logout: true
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:${{ inputs.tag }}
+      env:
+        I_TAG: ${{ inputs.tag }}
+      run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:$I_TAG
