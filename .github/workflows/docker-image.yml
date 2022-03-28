@@ -26,5 +26,5 @@ jobs:
         logout: true
     - name: Build the Docker image
       env:
-        I_TAG: ${{ inputs.tag }}
+        I_TAG: ${{ github.event.inputs.tag }}
       run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:$I_TAG
