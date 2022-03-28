@@ -25,4 +25,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         logout: true
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:${{ inputs.username }}
+      run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:${{ inputs.tag }}
