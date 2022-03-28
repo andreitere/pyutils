@@ -28,3 +28,7 @@ jobs:
       env:
         I_TAG: ${{ github.event.inputs.tag }}
       run: docker build . --file Dockerfile --tag andreiterecoasa/pyutils:$I_TAG
+    - name: Push image
+      env:
+        I_TAG: ${{ github.event.inputs.tag }}
+      run: docker push andreiterecoasa/pyutils:$I_TAG
